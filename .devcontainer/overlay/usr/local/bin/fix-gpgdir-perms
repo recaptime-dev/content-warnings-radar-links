@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -ex
+
+sudo chown -Rv node:gitpod ~/.gnupg
+sudo chmod -Rv 770 ~/.gnupg

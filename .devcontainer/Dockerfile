@@ -7,6 +7,8 @@ ARG NODE_VERSION="16"
 ARG DEBIAN_VERSION=bullseye
 FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${NODE_VERSION}-${DEBIAN_VERSION}
 
+COPY overlay/ /
+
 ### Gitpod usage setup - START ###
 
 ## Docker ##

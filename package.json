@@ -1,4 +1,8 @@
 {
   "name": "@recaptime-dev/content-warnings-radar-links",
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.2.1",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "deno run --allow-net --allow-env --allow-read=.env,.env.example,.env.defaults mod.ts"
+  }
 }

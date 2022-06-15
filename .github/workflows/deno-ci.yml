@@ -1,0 +1,30 @@
+name: Deno CI
+
+on:
+  push:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  ts-code:
+    name: Built=in linter/formatter for Deno
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Deno
+        uses: denoland/setup-deno@004814556e37c54a2f6e31384c9e18e983317366
+        with:
+          deno-version: v1.x
+      - name: Run linter and check formating
+        run: |
+          deno fmt --check
+          deno lint
+  hadolint-docker-workspace:
+    name: Hadolint CI for Docker workspace
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: brew install hadolint
+      - run: hadolint .devcontainer/Dockerfile

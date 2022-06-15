@@ -14,6 +14,7 @@ jobs:
       contents: read
     environment:
       name: production
+      url: https://cw.recaptime.eu.org
       
     steps:
       - name: Checkout
@@ -24,8 +25,8 @@ jobs:
           deno-version: v1.x
       - name: Run linter and check formating
         run: |
-          deno fmt --check
-          deno lint
+          deno fmt --ignore=.pnp.cjs,.yarn/releases/yarn-3.2.1.cjs
+          deno lint --ignore=.pnp.cjs,.yarn/releases/yarn-3.2.1.cjs,package.json
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:

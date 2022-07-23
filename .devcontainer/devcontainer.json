@@ -34,5 +34,6 @@
     "git-lfs": "latest",
     "github-cli": "latest",
     "sshd": "latest"
-  }
+  },
+  "workspaceFolder": "/workspace/content-warnings-radar-links"
 }

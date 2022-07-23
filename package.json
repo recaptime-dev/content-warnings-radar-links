@@ -3,6 +3,13 @@
   "packageManager": "yarn@3.2.1",
   "version": "0.1.0",
   "scripts": {
-    "start": "deno run --allow-net --allow-env --allow-read=.env,.env.example,.env.defaults mod.ts"
+    "postinstall": "deno cache deps.tsx",
+    "start": "deno run --allow-net --allow-env --allow-read=.env,.env.example,.env.defaults mod.ts",
+    "dev": "yarn start --watch",
+    "format": "yarn format:write",
+    "format:write": "deno fmt --ignore=.pnp.cjs,.yarn/releases/yarn-3.2.1.cjs",
+    "format:check": " deno fmt --check --ignore=.pnp.cjs,.yarn/releases/yarn-3.2.1.cjs",
+    "lint": "yarn lint:deno",
+    "lint:deno": "deno lint --ignore=.pnp.cjs,.yarn/releases/yarn-3.2.1.cjs,package.json"
   }
 }

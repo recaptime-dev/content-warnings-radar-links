@@ -18,7 +18,7 @@ jobs:
           deno-version: v1.x
       - name: Run linter and check formating
         run: |
-          deno fmt --ignore=.pnp.cjs,.yarn/releases/yarn-3.2.1.cjs
+          deno fmt --check --ignore=.pnp.cjs,.yarn/releases/yarn-3.2.1.cjs
           deno lint --ignore=.pnp.cjs,.yarn/releases/yarn-3.2.1.cjs,package.json
   hadolint-docker-workspace:
     name: Hadolint CI for Docker workspace

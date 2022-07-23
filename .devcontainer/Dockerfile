@@ -1,7 +1,7 @@
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.233.0/containers/javascript-node/.devcontainer/base.Dockerfile
 
-# TODO: Bump NODE_VERSION to new even-numbered major version at least a month after reaching LTS status. It's recommended to stay with Active or
-#       Maintaenance LTS versions for a bit longer before switching out.
+# TODO: Bump NODE_VERSION to new even-numbered major version at least a month after reaching LTS status.
+#It's recommended to stay with Active or Maintaenance LTS versions for a bit longer before switching out.
 ARG NODE_VERSION="16"
 # Only switch to new Debian release once every two years, its better to wait a bit for packages to stablize a bit longer.
 ARG DEBIAN_VERSION=bullseye
